@@ -1,0 +1,2 @@
+# Python-
+Pythonで勉強
