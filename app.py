@@ -1,6 +1,19 @@
-print('Hello World!')
-message = input('入力してください：')
-print ('入力された文字は：' + message)
-print('お疲れ様でした')
-for i in range(9):
-    print('iの値は：' + str(i))
+import pygame
+import sys
+import time
+
+# 初期化
+pygame.init()
+
+screen_width = 800
+screen_height = 600
+screen = pygame.display.set_mode((screen_width,screen_height))
+pygame.display.set_caption('ボールバウンズ')
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+            pygame.quit()
+            sys.exit()
