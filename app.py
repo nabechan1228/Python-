@@ -15,9 +15,9 @@ black = (0, 0, 0)
 white = (255, 255, 255)
 
 # ボールの設定
-ball_radius = 10
-ball_speed_x = 5
-ball_speed_y = 5
+ball_radius = 30
+ball_speed_x = 30
+ball_speed_y = 30
 ball = pygame.Rect(screen_width // 2, screen_height // 2, ball_radius * 2, ball_radius * 2)
 
 running = True
