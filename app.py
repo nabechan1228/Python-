@@ -20,8 +20,6 @@ ball_speed_x = 5
 ball_speed_y = 5
 ball = pygame.Rect(screen_width // 2, screen_height // 2, ball_radius * 2, ball_radius * 2)
 
-
-
 running = True
 while running:
     for event in pygame.event.get():
