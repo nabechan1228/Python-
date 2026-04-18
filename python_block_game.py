@@ -70,6 +70,8 @@ while running:
                             block_y = row * (block_height + 10) + 35
                             blocks.append(pygame.Rect(block_x, block_y, block_width, block_height))
                     paddle.x = screen_width // 2 - paddle_width // 2
+                    ball_speed_x = 5
+                    ball_speed_y = 5
                 elif waiting:
                     waiting = False
 
@@ -100,7 +102,15 @@ while running:
 
             # パドルとの衝突
             if ball.colliderect(paddle):
-                ball_speed_y *= -1
+                # 衝突位置に応じて反射角を変える
+                relative_intersect_x = (ball.centerx - paddle.centerx) / (paddle_width / 2)
+                ball_speed_x = relative_intersect_x * 8 # 中心から離れるほど横に速くなる
+                
+                # 縦方向を反転
+                ball_speed_y *= -1.05 # 5%加速
+                ball_speed_x *= 1.05 # 横も加速
+                
+                # めり込み防止
                 ball.bottom = paddle.top 
 
             # ブロックとの衝突
